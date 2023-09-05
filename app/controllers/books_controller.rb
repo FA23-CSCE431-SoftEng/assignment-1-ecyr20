@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to books_path, notice: "Book has been created"
+      redirect_to books_path, notice: @book.title + " has been created"
     else
       # The 'new' action is NOT being called here
       # Assign any instance variables needed
@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to book_path(@book), notice: "Book has been updated"
+      redirect_to book_path(@book), notice: @book.title + " has been updated"
     else
       render('edit')
     end
@@ -45,7 +45,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path, notice: "Book has been deleted"
+    redirect_to books_path, notice: @book.title + " has been deleted"
   end
 
   private
