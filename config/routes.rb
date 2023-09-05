@@ -6,13 +6,7 @@ Rails.application.routes.draw do
 
   get 'main/index'
 
-  resources :categories do
-    member do
-      get :delete
-    end
-  end
-
-  resources :tasks do
+  resources :books do
     member do
       get :delete
     end

@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    # render('index')
+    redirect_to(controller:'books', action: 'index')
   end
 
   def about
@@ -12,7 +12,7 @@ class MainController < ApplicationController
   end
 
   def hello
-    redirect_to(action: 'index')
+    redirect_to(controller:'books', action: 'index')
   end
 
 end
