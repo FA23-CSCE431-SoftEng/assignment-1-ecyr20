@@ -1,5 +1,10 @@
 
 <div class="books index">
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
   <h2>Books</h2>
 
   <%= link_to("Add New book", new_book_path, class: 'action new') %>
